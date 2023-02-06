@@ -6,6 +6,7 @@ export interface Track {
   collectionName: string;
   artistName: string;
   artworkUrl60: string;
+  previewUrl: string;
 }
 
 interface Response {

@@ -1,0 +1,20 @@
+.container {
+  display: "flex";
+  flex-direction: "column";
+  align-items: "center";
+}
+
+.playPause {
+  color: gray;
+  opacity: 50%;
+  scale: 5;
+  z-index: 1;
+}
+
+.loader {
+  width: "200px";
+  height: "200px";
+  border-radius: "100px";
+  border: "1px solid #333";
+  position: "relative";
+}

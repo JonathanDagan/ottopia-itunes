@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Track } from "../../services/ItunesApi";
+
+import { AudioPreview } from '../audio-preview/audio-preview'
 
 import styles from "./result.module.scss";
 
@@ -8,11 +10,14 @@ export interface ResultProps {
 }
 
 export const Result: React.FC<ResultProps> = ({ result }) => (
-  <div className={styles['resultCard']}>
-    <img src={result.artworkUrl60} alt={result.trackName} />
-    <h2>{result.trackName}</h2>
-    <p>{result.artistName}</p>
-  </div>
+    <div className={styles["resultCard"]}>
+      <img src={result.artworkUrl60} alt={result.trackName} />
+      <div className={styles["trackAndArtist"]}>
+        <h2>{result.trackName}</h2>
+        <p>{result.artistName}</p>
+      </div>
+        <AudioPreview src={result.previewUrl} />
+    </div>
 );
 
 export default Result;
