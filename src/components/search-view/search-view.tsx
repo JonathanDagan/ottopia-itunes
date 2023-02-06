@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Track, fetchTracks } from '../../services/ItunesApi';
-import Result from '../result/result';
+import { ResultList } from '../result-list/result-list';
+
+import styles from './search-view.module.scss';
 
 export interface SearchViewProps {
 }
@@ -20,8 +22,8 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className={styles['searchView']}>
+            <form className={styles['searchBar']} onSubmit={handleSubmit}>
                 <input
                     type="text"
                     value={searchTerm}
@@ -32,15 +34,13 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
                     Go
                 </button>
             </form>
+            <div>
             {isLoading ? (
                 <p>Loading...</p>
             ) : (
-                <div>
-                    {results.map((result) => (
-                        <Result key={result.trackId} result={result} />
-                    ))}
-                </div>
+                <ResultList results={results}/>
             )}
+            </div>
         </div>
     );
 };
