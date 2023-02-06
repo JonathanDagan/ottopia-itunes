@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>} />
         <Route path="/search" element={<SearchView/>}></Route>
-        <Route path="track:id" element={<TrackPage trackId=''/>}></Route>
+        <Route path="/track/:id" element={<TrackPage/>}></Route>
       </Routes>
     </div>
   );
