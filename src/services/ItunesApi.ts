@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export interface Track {
   trackId: number;
   trackName: string;
@@ -9,15 +7,17 @@ export interface Track {
   previewUrl: string;
 }
 
-interface Response {
-  results: Track[];
-}
-
 const API_ENDPOINT = 'https://itunes.apple.com/search';
 
-export const fetchTracks = async (term: string) => {
-  const res = await axios.get<Response>(API_ENDPOINT, {
-    params: { term, entity: 'song' },
-  });
-  return res.data.results;
+export const fetchTrack = async (id: number): Promise<Track> => {
+  const res = await fetch(`${API_ENDPOINT}?id=${id}&entity=song`);
+  const { results } = await res.json();
+  return results[0];
 };
+
+
+export const fetchTracks = async (term: string): Promise<Track[]> => {
+  const res = await fetch(`${API_ENDPOINT}?term=${term}&entity=song`);
+  const { results } = await res.json();
+  return results;
+}
