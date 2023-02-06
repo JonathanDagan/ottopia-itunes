@@ -10,7 +10,7 @@ iTunes search preview on top of the iTunes API with react
 
 ## Features
 
-Implemented features
+#### Required features
 
 Expectations:
 - [ ] The app will be composed of a single input for search term, and a single "Go" button to fetch the results.
