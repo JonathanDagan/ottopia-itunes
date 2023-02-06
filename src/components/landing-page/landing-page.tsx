@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Link, BrowserRouter as Router } from "react-router-dom";
-
 export interface LandingPageProps {
   className?: string;
 }
@@ -18,11 +16,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ className = "" }) => (
           <img src="/itunes_logo.png" className="logo" alt="iTunes logo" />
         </a>
       </div>
-      <Router>
-        <Link to="/search">
+        <a href="/search">
           <button className="">👩🏼‍💻let's find some music👨‍💻</button>
-        </Link>
-      </Router>
+        </a>
     </div>
   </div>
 );
