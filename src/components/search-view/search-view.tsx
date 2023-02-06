@@ -8,7 +8,6 @@ import styles from "./search-view.module.scss";
 
 export interface SearchViewProps {}
 
-// add autosearch
 export const SearchView: React.FC<SearchViewProps> = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Track[]>([]);

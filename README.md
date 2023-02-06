@@ -24,8 +24,8 @@ iTunes search preview on top of the iTunes API with react
 - [x] Reactive Forms - until the user has typed anything in the search box, the "Go" button is disabled.
 - [x] Routing - When a user presses a result, it is directed to a single-result-page component, displaying that results in full screen.
 - [x] TypeScript - the results API response will be fully typed with a TypeScript interface.
-- [ ] Auto search - if the user has typed something, it will search automatically without having to press "Go"
-- [ ] Debouncing for auto-search - if the user has typed something, it will wait 500ms before it will send the API request (assuming the user has not finished typing yet)
+- [x] Auto search - if the user has typed something, it will search automatically without having to press "Go"
+- [x] Debouncing for auto-search - if the user has typed something, it will wait 500ms before it will send the API request (assuming the user has not finished typing yet)
 
 
 ### My Additional features
