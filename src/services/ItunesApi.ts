@@ -9,7 +9,7 @@ export interface Track {
 
 const API_ENDPOINT = 'https://itunes.apple.com/search';
 
-export const fetchTrack = async (id: number): Promise<Track> => {
+export const fetchTrackById = async (id: number): Promise<Track> => {
   const res = await fetch(`${API_ENDPOINT}?id=${id}&entity=song`);
   const { results } = await res.json();
   return results[0];
