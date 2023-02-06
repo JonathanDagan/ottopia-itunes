@@ -10,9 +10,9 @@ iTunes search preview on top of the iTunes API with react
 
 ## Features
 
-#### Required features
+### Required features
 
-Expectations:
+#### <u>Expectations</u>:
 - [ ] The app will be composed of a single input for search term, and a single "Go" button to fetch the results.
 - [ ] Once the user enters a search term and presses the "Go" button, the app will send a search query to the API, and display the results.
 - [x] The results will be displayed in a list.
@@ -20,7 +20,7 @@ Expectations:
 - [x] A ReadMe with features included and configurations
 - [ ] Be creative and style as you want
 
-Bonus features to implement :
+#### <u>Bonus features to implement</u>:
 - [x] Reactive Forms - until the user has typed anything in the search box, the "Go" button is disabled.
 - [ ] Routing - When a user presses a result, it is directed to a single-result-page component, displaying that results in full screen.
 - [x] TypeScript - the results API response will be fully typed with a TypeScript interface.
