@@ -3,6 +3,14 @@
 ## Description
 iTunes search preview on top of the iTunes API with react
 
+This project was made with:
+- React
+- Typescript (swc)
+- vite
+- cypress
+- codux
+- iTunes API
+
 ## Installation
 - Clone the repository
 - Run `yarn start` to install the dependencies
