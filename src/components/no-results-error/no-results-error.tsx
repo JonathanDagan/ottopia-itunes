@@ -9,7 +9,7 @@ export interface NoResultsErrorProps {
 
 export const NoResultsError: React.FC<NoResultsErrorProps> = (props) => (
   <h2 className={props.className}>
-    No results{" "}
+    No results
     {props.term ? (
       <span className={styles['term']}>{`for ${props.term}`}</span>
     ) : (
