@@ -1,20 +1,18 @@
 .resultCard {
     display: grid;
-    grid-row: auto;
-    width: 100%;
+    width: 35vw;
     max-width: 40vw;
     min-width: 25vw;
-    height: 8vh;
+    height: fit-content;
     grid-template-columns: 15% 70% 15%;
     padding: 1rem;
     margin: 1rem;
+    opacity: 0.9;
     background-color: pink;
     border-radius: 0.5rem;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-// align the text to the left
 .trackAndArtist {
     grid-column-start: 2;
     display: grid;
@@ -22,12 +20,6 @@
     column-gap: 0.1em;
     justify-content: left;
     align-items: left;
-
-    // grid-column-start: initial;
-    // flex-direction: column;
-    // justify-content: left;
-    // display: flex;
-    // align-items: left;
 }
 
 header {
