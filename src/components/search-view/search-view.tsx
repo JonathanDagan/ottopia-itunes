@@ -12,6 +12,7 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Track[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -43,30 +44,35 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
 
   const handleTermChange = (term: string) => {
     setSearchTerm(term);
-    if(term.length > 2) {
-        search();
+    if (term.length > 2) {
+      search();
     }
-  }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     handleTermChange(e.target.value);
   };
 
+  const handleFocus = () => {
+    setIsActive(true);
+  };
+
   return (
     <div className={styles["searchView"]}>
-      <form className={styles["searchBar"]} onSubmit={handleSubmit}>
+      <form className={`${styles["searchBar"]} ${isActive ? "active" : ""}`} onSubmit={handleSubmit}>
         <input
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
+          onFocus={handleFocus}
           placeholder="Search term"
         />
         <button type="submit" disabled={!searchTerm}>
           Go
         </button>
       </form>
-      <div className={styles['resultsList']}>
+      <div className={styles["resultsList"]}>
         {isLoading ? <p>Loading...</p> : <ResultList results={results} />}
       </div>
     </div>
