@@ -18,8 +18,8 @@ export const Result: React.FC<ResultProps> = ({ result }) => (
             </a>
       <p>{result.artistName}</p>
     </div>
-    <AudioPreview src={result.previewUrl} />
+    <div className={styles["audioPreviewContainer"]}>
+        <AudioPreview src={result.previewUrl} />
+    </div>
   </div>
 );
-
-export default Result;

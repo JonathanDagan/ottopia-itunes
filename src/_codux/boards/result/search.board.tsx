@@ -8,6 +8,10 @@ export default createBoard({
     name: 'Result',
     Board: () => <Result result={resultExample}></Result>,
     environmentProps: {
-        windowBackgroundColor: '#ffffff'
+        windowBackgroundColor: '#ffffff',
+        canvasWidth: 946,
+        windowWidth: 1920,
+        windowHeight: 1080,
+        canvasHeight: 276
     }
 });

@@ -43,7 +43,7 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
 
   const handleTermChange = (term: string) => {
     setSearchTerm(term);
-    if(term.length >= 3) {
+    if(term.length > 2) {
         search();
     }
   }
@@ -66,7 +66,7 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
           Go
         </button>
       </form>
-      <div>
+      <div className={styles['resultsList']}>
         {isLoading ? <p>Loading...</p> : <ResultList results={results} />}
       </div>
     </div>
