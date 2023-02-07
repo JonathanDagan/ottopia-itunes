@@ -31,7 +31,7 @@ iTunes search preview on top of the iTunes API with react
 ### My Additional features
 - [ ] Error Handeling for api and for the user (no results, no internet connection, etc.)
 - [ ] Component Tests
-- [ ] Playing the preview of the song
+- [x] Playing the preview of the song
 - [ ] Add a loading spinner
 - [ ] Add a pagination
 - [ ] deploy to github pages
