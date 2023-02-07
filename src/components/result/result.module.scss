@@ -34,15 +34,20 @@ img {
 h2 {
     margin-bottom: 0px;
     align-items: baseline;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: white;
+    padding: 0.2em;
+
 }
 p {
     margin-top: 0px;
-    align-items: baseline;
+    text-align: left;
+    font-weight: bold;
+    cursor: text;
 }
 
 .audioPreviewContainer {
-    // have this element stick to the edge of the row
     align-self: center;
-    // padding: -1px;
     margin-top: 0px;
 }
