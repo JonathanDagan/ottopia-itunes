@@ -9,10 +9,12 @@ export interface ResultListProps {
   results: Track[];
 }
 
-export const ResultList: React.FC<ResultListProps> = ({ results }) => (
-  <div className={styles["resultList"]}>
-    {results.map((result) => (
-      <Result key={result.trackId} result={result} />
-    ))}
-  </div>
-);
+export const ResultList: React.FC<ResultListProps> = ({ results }) => {
+  return (
+    <div className={styles["resultList"]}>
+      {results.map((result) => (
+        <Result key={result.trackId} result={result} />
+      ))}
+    </div>
+  );
+};

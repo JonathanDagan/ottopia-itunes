@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Track, fetchTracks } from "../../services/ItunesApi";
 import { ResultList } from "../result-list/result-list";
+import { NoResultsError } from "../no-results-error/no-results-error";
+
 
 import { debounce } from "lodash";
 
 import styles from "./search-view.module.scss";
 
 export interface SearchViewProps {}
+
+const autoSearchMinLength = 3;
 
 export const SearchView: React.FC<SearchViewProps> = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,7 +48,7 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
 
   const handleTermChange = (term: string) => {
     setSearchTerm(term);
-    if (term.length > 2) {
+    if (term.length > autoSearchMinLength) {
       search();
     }
   };
@@ -73,7 +77,10 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
         </button>
       </form>
       <div className={styles["resultsList"]}>
-        {isLoading ? <p>Loading...</p> : <ResultList results={results} />}
+        {isLoading ? <p>Loading...</p> : 
+        results.length === 0 && searchTerm.length > autoSearchMinLength ? <NoResultsError term={searchTerm} />
+        :<ResultList results={results} />
+        }
       </div>
     </div>
   );
