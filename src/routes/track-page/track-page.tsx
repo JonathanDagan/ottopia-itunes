@@ -7,7 +7,7 @@ import { formatMsToMMSS } from "../../utils";
 import styles from "./track-page.module.scss";
 
 export interface TrackPageProps {
-  trackId?: string;
+  trackId?: number;
 }
 
 export const TrackPage: React.FC<TrackPageProps> = (props) => {
@@ -20,7 +20,7 @@ export const TrackPage: React.FC<TrackPageProps> = (props) => {
       console.log("No trackId"); //Todo: handle this with a 404 page
       return;
     }
-    fetchTrackById(id)
+    fetchTrackById(String(id))
       .then((track) => setData(track))
       .catch((error) => console.error(error));
   }, []);

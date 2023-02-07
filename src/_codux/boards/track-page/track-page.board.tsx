@@ -1,5 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
-import { TrackPage } from '../../../components/track-page/track-page';
+import { TrackPage } from '../../../routes/track-page/track-page';
 
 import {resultExample} from '../result/result'
 

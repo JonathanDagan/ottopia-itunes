@@ -1,10 +1,10 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import "./App.css";
 
-import { LandingPage } from './components/landing-page/landing-page';
-import { SearchView } from './components/search-view/search-view';
-import { TrackPage } from './components/track-page/track-page';
+import { LandingPage } from './routes/landing-page/landing-page';
+import { SearchView } from './routes/search-view/search-view';
+import { TrackPage } from './routes/track-page/track-page';
 
 
 function App() {

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 export interface LandingPageProps {
   className?: string;
 }
@@ -16,9 +18,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ className = "" }) => (
           <img src="/itunes_logo.png" className="logo" alt="iTunes logo" />
         </a>
       </div>
-        <a href="/search">
-          <button className="">👩🏼‍💻let's find some music👨‍💻</button>
-        </a>
+      <Link to={"/search"}>
+        <button className="">👩🏼‍💻let's find some music👨‍💻</button>
+      </Link>
     </div>
   </div>
 );

@@ -1,5 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
-import { LandingPage } from '../../../components/landing-page/landing-page';
+import { LandingPage } from '../../../routes/landing-page/landing-page';
 
 export default createBoard({
     name: 'LandingPage',

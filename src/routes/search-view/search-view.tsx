@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Track, fetchTracks } from "../../services/ItunesApi";
-import { ResultList } from "../result-list/result-list";
-import { NoResultsError } from "../no-results-error/no-results-error";
+import { ResultList } from "../../components/result-list/result-list";
+import { NoResultsError } from "../../components/no-results-error/no-results-error";
 
 import { Oval } from "react-loader-spinner";
 

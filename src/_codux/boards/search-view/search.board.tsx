@@ -1,5 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
-import { SearchView } from '../../../components/search-view/search-view';
+import { SearchView } from '../../../routes/search-view/search-view';
 
 export default createBoard({
     name: 'Search',
