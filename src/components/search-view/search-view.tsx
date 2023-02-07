@@ -3,6 +3,7 @@ import { Track, fetchTracks } from "../../services/ItunesApi";
 import { ResultList } from "../result-list/result-list";
 import { NoResultsError } from "../no-results-error/no-results-error";
 
+import { Oval } from "react-loader-spinner";
 
 import { debounce } from "lodash";
 
@@ -64,7 +65,10 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
 
   return (
     <div className={styles["searchView"]}>
-      <form className={`${styles["searchBar"]} ${isActive ? "active" : ""}`} onSubmit={handleSubmit}>
+      <form
+        className={`${styles["searchBar"]} ${isActive ? "active" : ""}`}
+        onSubmit={handleSubmit}
+      >
         <input
           type="text"
           value={searchTerm}
@@ -77,10 +81,21 @@ export const SearchView: React.FC<SearchViewProps> = (props) => {
         </button>
       </form>
       <div className={styles["resultsList"]}>
-        {isLoading ? <p>Loading...</p> : 
-        results.length === 0 && searchTerm.length > autoSearchMinLength ? <NoResultsError term={searchTerm} />
-        :<ResultList results={results} />
-        }
+        {isLoading ? (
+          <Oval
+            height={300}
+            width={300}
+            color="white"
+            secondaryColor="pink"
+            visible={true}
+            ariaLabel="oval-loading"
+            strokeWidth={4}
+          />
+        ) : results.length === 0 && searchTerm.length > autoSearchMinLength ? (
+          <NoResultsError term={searchTerm} />
+        ) : (
+          <ResultList results={results} />
+        )}
       </div>
     </div>
   );
